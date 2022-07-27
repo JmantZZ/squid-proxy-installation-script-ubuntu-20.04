@@ -12,6 +12,7 @@ echo -e "${YELLOW}Proceed? [Press any key to continue or CTRL+C to cancel${NC}"
 read meow
 
 echo -e "${CYAN}Installing dependancies${NC}"
+sudo apt update
 sudo apt-get -y install squid squid-common
 echo -e "${GREEN}Finished Installing dependancies${NC}"
 
@@ -21,7 +22,7 @@ sudo cp squid.conf squid.conf.backup
 echo -e "${GREEN}Finished creating backup${NC}"
 
 echo -e "${YELLOW}Importing the configuration file and deleting the original one...${NC}"
-sudo rm squid.conf
+sudo rm -f squid.conf
 sudo wget https://github.com/JmantZZ/squid-proxy-installation-script-ubuntu-20.04/raw/main/squid.conf
 echo -e "${GREEN}Finished tasks..${NC}"
 
